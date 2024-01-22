@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Single+Day&display=swap");
+
+.loginContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.loginOuterBox {
+  width: 70vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+  margin: 5vh auto 0vh;
+  border-radius: 15px;
+  text-align: center;
+}
+.logo {
+  margin-top: 5vh;
+}
+.buttons {
+  display: flex;
+  margin-top: 6vh;
+  justify-content: space-between;
+  padding-inline: 25rem;
+}
+.SignUpButton {
+  text-decoration: none;
+  height: 5vh;
+  width: 12vw;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.5em;
+  line-height: 44px;
+  letter-spacing: 0em;
+  color: rgba(71, 68, 68, 1);
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.625rem;
+  transition: 0.4s;
+  margin: 0;
+  padding: 0;
+}
+.SignUpButton:hover {
+  background-color: rgb(219, 216, 211);
+}
+.LoginButton {
+  height: 5vh;
+  width: 12vw;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  transition: 0.4s;
+  line-height: 30px;
+  letter-spacing: 0em;
+  color: rgba(71, 68, 68, 1);
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 1);
+  font-size: 1.5em;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+}
+.LoginButton:hover {
+  background-color: rgb(219, 216, 211);
+}
+.loginform {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  margin-top: 6vh;
+  padding-inline-end: 24rem;
+  text-align: center;
+}
+.label {
+  font-size: 20px;
+  font-family: Poppins;
+  color: rgba(71, 68, 68, 1);
+  text-align: right;
+}
+.textBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3vw;
+}
+.input {
+  height: 4vh;
+  width: 20vw;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  background: rgba(244, 244, 244, 1);
+}
+.submitDetails {
+  height: 6vh;
+  width: 15vw;
+  border: 5px solid transparent;
+  background: rgba(169, 188, 255, 1);
+  font-family: Poppins;
+  font-size: 25px;
+  color: rgba(71, 68, 68, 1);
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  border-radius: 8px;
+  margin-left: 28vw;
+  margin-top: 3vh;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.submitDetails:hover {
+  border-color: rgb(79, 79, 146);
+}
