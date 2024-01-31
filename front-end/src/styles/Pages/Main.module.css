@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Single+Day&display=swap");
+.mainBody {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.sideBar {
+  height: 100%;
+  width: 15%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logo {
+  margin-top: 6vh;
+}
+.dashBoard {
+  background: rgba(237, 237, 237, 1);
+  height: 100%;
+  width: 85%;
+  overflow: hidden;
+}
+
+.buttons {
+  height: 4vh;
+  width: 12vw;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1vw;
+  line-height: 30px;
+  letter-spacing: 0em;
+  color: rgba(71, 68, 68, 1);
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.625rem;
+  transition: 0.4s;
+}
+.buttons:hover {
+  background-color: rgb(219, 216, 211);
+}
+.appFunctionalities {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: auto;
+  width: -webkit-fill-available;
+  padding-left: 1.5vw;
+}
+.logOutButton {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3vh;
+  text-align: center;
+  align-items: center;
+}
+.logOut {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.2vw;
+  line-height: 30px;
+  letter-spacing: 0em;
+  color: rgba(71, 68, 68, 1);
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.625rem;
+  transition: 0.4s;
+}
+.logOut:hover {
+  background-color: rgb(219, 216, 211);
+}
+.selected {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+}

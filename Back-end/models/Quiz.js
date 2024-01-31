@@ -12,9 +12,11 @@ const responseSchema = new mongoose.Schema({
 });
 const questionSchema = new mongoose.Schema({
   text: { type: String, required: true },
-  options: [{ type: String, required: true }],
+  options: [{ type: String }],
+  imageOptions: [{ type: String }],
+  textImageOptions: [[{ type: String }]],
   correctOption: { type: String },
-  timer: { type: Number },
+  timer: { type: String },
   impressions: { type: Number, default: 0 },
 });
 

@@ -21,14 +21,14 @@
   display: flex;
   margin-top: 6vh;
   justify-content: space-between;
-  padding-inline: 25rem;
+  padding-inline: 20vw;
 }
 .SignUpButton {
   height: 5vh;
   width: 12vw;
   text-align: center;
   font-family: Poppins;
-  font-size: 1.5em;
+  font-size: 1.5vw;
   line-height: 30px;
   letter-spacing: 0em;
   color: rgba(71, 68, 68, 1);
@@ -48,7 +48,7 @@
   width: 12vw;
   text-align: center;
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 1.5em;
   transition: 0.4s;
   line-height: 44px;
   letter-spacing: 0em;
@@ -56,7 +56,7 @@
   border: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 1);
-  font-size: 1.5em;
+  font-size: 1.5vw;
   border-radius: 0.625rem;
   margin: 0;
   padding: 0;
@@ -73,7 +73,7 @@
   text-align: center;
 }
 .label {
-  font-size: 20px;
+  font-size: 1.5vw;
   font-family: Poppins;
   color: rgba(71, 68, 68, 1);
   text-align: right;

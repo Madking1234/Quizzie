@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import styles from "../.././styles/Authentication/Login.module.css";
 import QUIZZIE from ".././Assets/QUIZZIE.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../services/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
-  console.log(email);
+  const [passError, setPasswordError] = useState("");
+
+  const navigate = useNavigate();
+
   const validateForm = () => {
     let isValid = true;
     if (!email.trim()) {
@@ -21,13 +25,33 @@ const Login = () => {
     }
     return isValid;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log("form submittes");
-    } else {
-      console.log("try again");
+    if (!validateForm()) {
       setEmail("");
+    }
+    if (validateForm()) {
+      try {
+        const response = await api.post("http://localhost:4000/Login", {
+          email,
+          password,
+        });
+
+        if (response.data.status === "Success") {
+          console.log("Logged in successfully");
+
+          localStorage.setItem("token", response.data.token);
+
+          navigate("/Login/main");
+        } else {
+          console.error("Login failed:", response.data.message);
+
+          setPasswordError("Invalid password");
+          setPassword("");
+        }
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
     }
   };
   return (
@@ -50,15 +74,17 @@ const Login = () => {
               value={email}
               placeholder={emailError}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
             ></input>
           </div>
           <div className={styles.textBox}>
             <label className={styles.label}>Password</label>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               aria-label="password"
               value={password}
+              placeholder={passError}
               onChange={(e) => setPassword(e.target.value)}
             ></input>
           </div>

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Single+Day&display=swap");
+
+.quizBody {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+}
+.createQuiz {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: rgba(47, 47, 47, 0.75);
+}
+.quizPopUp {
+  height: 40vh;
+  width: 35vw;
+  top: 30%;
+  left: 30%;
+  position: absolute;
+  background-color: white;
+  border-radius: 1em;
+}
+.quizNameInput {
+  height: 6vh;
+  width: 27vw;
+  border: none;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  margin-top: 8vh;
+  padding-left: 2vw;
+  padding-top: 0.5vh;
+  border-radius: 0.6em;
+  font-size: 1.2vw;
+}
+.quizNameInput::placeholder {
+  font-size: 1.2vw;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: rgba(159, 159, 159, 1);
+}
+.quizType {
+  height: 6vh;
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.label {
+  font-size: 1.2vw;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: rgba(159, 159, 159, 1);
+}
+.quizSelectorButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+.quizSelectorButtons button {
+  height: 5vh;
+  width: 7vw;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5em;
+  font-size: 1.2vw;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: rgba(159, 159, 159, 1);
+}
+.submitCancilButton {
+  margin-top: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.submitButton {
+  height: 5vh;
+  width: 13vw;
+  border: none;
+  background: rgba(96, 184, 75, 1);
+  transition: 0.4s;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border-radius: 0.5em;
+  font-size: 1.2vw;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: white;
+}
+.submitButton:hover {
+  border-color: rgb(44, 146, 16);
+}
+.cancilButton {
+  height: 5vh;
+  width: 13vw;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5em;
+  font-size: 1.2vw;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: black;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.cancilButton:hover {
+  background-color: rgb(231, 40, 40);
+}

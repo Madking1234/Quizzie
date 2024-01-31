@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styles from "../.././styles/Authentication/SignUp.module.css";
 import QUIZZIE from ".././Assets/QUIZZIE.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../services/api";
+
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,6 +12,7 @@ const SignUp = () => {
   const [userError, setUserError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passError, setPassError] = useState("");
+  const navigate = useNavigate();
 
   const validateName = () => {
     let validName = true;
@@ -46,7 +49,7 @@ const SignUp = () => {
     return isValid;
   };
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     e.preventDefault();
     if (validateName()) {
       console.log("logged in");
@@ -64,10 +67,28 @@ const SignUp = () => {
       setPassword("");
       setConfirmPassword("");
     }
-    axios
-      .post("", { userName, email, password })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+    if (validateName() && validateEmail() && validatePass()) {
+      setUserName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      try {
+        const response = await api.post("http://localhost:4000/SignUp", {
+          userName,
+          email,
+          password,
+        });
+
+        if (response.data.status === "ADDED") {
+          console.log("User added successfully");
+          navigate("/Login");
+        } else {
+          console.error("Failed to add user:", response.data.message);
+        }
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    }
   };
 
   return (
@@ -107,7 +128,7 @@ const SignUp = () => {
             <label className={styles.label}>Password</label>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               aria-label="password"
               value={password}
               placeholder={passError}
@@ -118,7 +139,7 @@ const SignUp = () => {
             <label className={styles.label}>Confirm Password</label>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               aria-label="confirmPassword"
               value={confirmPassword}
               placeholder={passError}
